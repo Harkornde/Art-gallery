@@ -1,0 +1,131 @@
+@use "../responsive-design/" as res;
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body,
+* {
+  margin: 0;
+  padding: 0;
+  background: #fcfaf9;
+}
+
+:root {
+  --brown: #d5966c;
+  --Almost-black: #151515;
+  --Dark-Grey: #444444;
+  --white: #ffffff;
+}
+
+// Mobile version
+
+#gallery__homepage {
+  background: url(../assets/mobile/image-hero.jpg),
+    lightgray 50% / cover no-repeat;
+  height: 240px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include res.breakpoint(tablet) {
+    background: url(../assets/tablet/image-hero.jpg),
+      lightgray 50% / cover no-repeat;
+    width: 437px;
+    height: 700px;
+  }
+}
+
+.gallery h1 {
+  margin: 32px 16px;
+  color: var(--Almost-black);
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 55px; /* 91.667% */
+  text-transform: uppercase;
+
+  @include res.breakpoint(tablet) {
+    margin: auto;
+    font-size: 70px;
+    line-height: 65px; /* 92.857% */
+    position: absolute;
+    top: 145px;
+    left: 389px;
+    background-color: transparent;
+  }
+}
+
+.locate p {
+  color: var(--Dark-Grey);
+  margin: auto 16px;
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px; /* 155.556% */
+
+  @include res.breakpoint(tablet) {
+    margin: auto;
+    position: absolute;
+    top: 323px;
+    left: 389px;
+    background-color: transparent;
+    margin-right: 40px;
+    max-width: 355px;
+    font-size: 18px;
+  }
+}
+
+.locate button {
+  border: none;
+}
+
+.locate > button:nth-child(2) {
+  color: var(--white);
+  margin: 32px 0 32px 16px;
+  padding: 24px 32px;
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 20px;
+  cursor: pointer;
+  background: var(--Almost-black, #151515);
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 3.636px;
+
+  @include res.breakpoint(tablet) {
+    margin: auto;
+    position: absolute;
+    top: 483px;
+    left: 389px;
+  }
+}
+
+.locate button svg {
+  position: relative;
+  top: 28px;
+  right: 5px;
+
+  @include res.breakpoint(tablet) {
+    position: absolute;
+    top: 483px;
+    left: 593px;
+  }
+}
+
+// Additional Desktop
+
+#desktop {
+  width: 450px;
+  height: 799px;
+  display: inline-block;
+  background: var(--Almost-black);
+}
