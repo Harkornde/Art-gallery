@@ -1,10 +1,16 @@
+@use "sass:math";
+
 $breakpoints: (
   "tablet": 768px,
-  "deskotp": 1440px,
+  "desktop": 1440px,
 );
 
 @mixin breakpoint($size) {
   @media (min-width: map-get($breakpoints, $size)) {
     @content;
   }
+}
+
+@function rem($pixel) {
+  @return math.div($pixel, 16) + rem; 
 }

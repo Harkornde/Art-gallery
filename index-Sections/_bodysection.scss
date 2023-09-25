@@ -1,0 +1,104 @@
+@use "../responsive-design/" as u;
+
+.day_at {
+  margin-top: u.rem(120);
+
+  & .img {
+    background: url(../assets/mobile/image-grid-1.jpg),
+      lightgray 50% / cover no-repeat;
+    margin: auto;
+    display: block;
+    width: calc(100% - u.rem(32));
+    height: 320px;
+
+    //Tablet
+    @include u.breakpoint(tablet) {
+      background: url(../assets/tablet/image-grid-1.jpg),
+        lightgray 50% / cover no-repeat;
+      background-repeat: no-repeat;
+      width: u.rem(398);
+      height: u.rem(400);
+    }
+
+    //Desktop
+    @include u.breakpoint(desktop) {
+      background: url(../assets/desktop/image-grid-1.jpg),
+        lightgray 50% / cover no-repeat;
+      background-repeat: no-repeat;
+      width: u.rem(635);
+      height: u.rem(400);
+    }
+  }
+
+  & h1 {
+    margin: u.rem(25) u.rem(16) u.rem(21);
+    font-family: Big Shoulders Display;
+    font-size: u.rem(50);
+    font-style: normal;
+    font-weight: 900;
+    line-height: u.rem(45);
+    text-transform: uppercase;
+
+    @include u.breakpoint(tablet) {
+      margin: u.rem(25) auto;
+    }
+
+    @include u.breakpoint(desktop) {
+      margin: u.rem(32) auto;
+      font-size: u.rem(60);
+      line-height: u.rem(60);
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  & p {
+    color: var(--Dark-Grey);
+    font-family: Outfit;
+    font-size: u.rem(18);
+    font-weight: 300;
+    line-height: u.rem(28);
+    width: calc(100% - u.rem(32));
+    margin: auto;
+
+    @include u.breakpoint(tablet) {
+      margin: 0;
+      width: auto;
+    }
+
+    @include u.breakpoint(desktop) {
+      font-size: u.rem(22);
+      line-height: u.rem(32);
+    }
+  }
+
+  // Day_at it both on mobile and desktop
+  @include u.breakpoint(tablet) {
+    display: flex;
+    flex: 1;
+    flex-direction: row-reverse;
+    column-gap: u.rem(68);
+    width: calc(100% - u.rem(80));
+    margin: auto;
+    margin-top: u.rem(120);
+    margin-bottom: u.rem(11);
+
+    .img_txt {
+      width: u.rem(223);
+    }
+  }
+
+  @include u.breakpoint(desktop) {
+    width: calc(100% - u.rem(330));
+    column-gap: u.rem(125);
+
+    .img_txt {
+      width: u.rem(350);
+    }
+  }
+}
+
+// @include u.breakpoint(tablet) {
+// }

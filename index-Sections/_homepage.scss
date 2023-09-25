@@ -1,7 +1,9 @@
 @use "../responsive-design/" as res;
+
 html {
   box-sizing: border-box;
   font-size: 100%;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -29,16 +31,26 @@ body,
 #gallery__homepage {
   background: url(../assets/mobile/image-hero.jpg),
     lightgray 50% / cover no-repeat;
-  height: 240px;
+  height: res.rem(240);
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 
+  //Tablet
   @include res.breakpoint(tablet) {
     background: url(../assets/tablet/image-hero.jpg),
       lightgray 50% / cover no-repeat;
-    width: 437px;
-    height: 700px;
+    width: res.rem(437);
+    height: res.rem(700);
+  }
+
+  //Desktop
+  @include res.breakpoint(desktop) {
+    display: inline-block;
+    background: url(../assets/desktop/image-hero.jpg),
+      lightgray 50% / cover no-repeat;
+    height: res.rem(800);
+    width: res.rem(540);
   }
 }
 
@@ -46,86 +58,122 @@ body,
   margin: 32px 16px;
   color: var(--Almost-black);
   font-family: "Big Shoulders Display", cursive;
-  font-size: 60px;
+  font-size: res.rem(60);
   font-style: normal;
   font-weight: 900;
-  line-height: 55px; /* 91.667% */
+  line-height: res.rem(55); /* 91.667% */
   text-transform: uppercase;
 
   @include res.breakpoint(tablet) {
     margin: auto;
-    font-size: 70px;
-    line-height: 65px; /* 92.857% */
+    font-size: res.rem(70);
+    line-height: res.rem(65); /* 92.857% */
     position: absolute;
-    top: 145px;
-    left: 389px;
+    top: res.rem(145);
+    left: res.rem(389);
     background-color: transparent;
+  }
+
+  @include res.breakpoint(desktop) {
+    margin: auto;
+    font-size: res.rem(96);
+    line-height: res.rem(88); /* 92.857% */
+    position: absolute;
+    top: res.rem(189);
+    left: res.rem(165);
+    background-color: transparent;
+    mix-blend-mode: difference;
+    color: white;
   }
 }
 
 .locate p {
   color: var(--Dark-Grey);
-  margin: auto 16px;
+  margin: auto res.rem(16);
   font-family: "Outfit", sans-serif;
-  font-size: 18px;
+  font-size: res.rem(18);
   font-style: normal;
   font-weight: 300;
-  line-height: 28px; /* 155.556% */
+  line-height: res.rem(28); /* 155.556% */
 
   @include res.breakpoint(tablet) {
     margin: auto;
     position: absolute;
-    top: 323px;
-    left: 389px;
+    top: res.rem(323);
+    left: res.rem(389);
     background-color: transparent;
-    margin-right: 40px;
-    max-width: 355px;
-    font-size: 18px;
+    margin-right: res.rem(40);
+    max-width: res.rem(355);
+    font-size: res.rem(18);
+  }
+
+  @include res.breakpoint(desktop) {
+    top: res.rem(190);
+    left: res.rem(925);
+    margin-right: res.rem(40);
+    max-width: res.rem(350);
+    font-size: res.rem(22);
+    line-height: 32px;
   }
 }
 
-.locate button {
-  border: none;
+.locate a {
+  text-decoration: none;
 }
 
-.locate > button:nth-child(2) {
+.locate a {
   color: var(--white);
-  margin: 32px 0 32px 16px;
-  padding: 24px 32px;
+  margin: res.rem(32) 0 res.rem(32) res.rem(16);
+  padding: res.rem(24) res.rem(32);
   font-family: "Big Shoulders Display", cursive;
-  font-size: 20px;
+  font-size: res.rem(20);
   cursor: pointer;
   background: var(--Almost-black, #151515);
+  color: var(--white);
   font-style: normal;
   font-weight: 800;
   line-height: normal;
-  letter-spacing: 3.636px;
+  letter-spacing: res.rem(3.63);
 
   @include res.breakpoint(tablet) {
     margin: auto;
     position: absolute;
-    top: 483px;
-    left: 389px;
+    top: res.rem(483);
+    left: res.rem(389);
+  }
+
+  @include res.breakpoint(desktop) {
+    top: res.rem(414);
+    left: res.rem(925);
   }
 }
 
-.locate button svg {
+.locate a svg {
   position: relative;
-  top: 28px;
-  right: 5px;
+  top: res.rem(28);
+  left: res.rem(32);
 
   @include res.breakpoint(tablet) {
+    // position: absolute;
+    // top: res.rem(483);
+    // left: res.rem(593);
     position: absolute;
-    top: 483px;
-    left: 593px;
+    margin-top: res.rem(-28);
+    margin-left: res.rem(170);
   }
 }
 
 // Additional Desktop
-
-#desktop {
-  width: 450px;
-  height: 799px;
-  display: inline-block;
-  background: var(--Almost-black);
+@include res.breakpoint(desktop) {
+  .desk {
+    border: none;
+    margin: 0;
+    width: res.rem(450);
+    height: res.rem(799);
+    background: var(--Almost-black);
+  }
+  #desktop {
+    display: flex;
+    flex: 1;
+  }
 }
