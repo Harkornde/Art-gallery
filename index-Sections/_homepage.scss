@@ -9,11 +9,12 @@ html {
 *,
 *::after,
 *::before {
+  margin: 0;
+  padding: 0;
   box-sizing: inherit;
 }
 
-body,
-* {
+body {
   margin: 0;
   padding: 0;
   background: #fcfaf9;
