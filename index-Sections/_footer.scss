@@ -1,0 +1,23 @@
+@use "../responsive-design/" as u;
+
+#footer {
+  width: 100%;
+  height: auto;
+  background: var(--Almost-black);
+
+  & .foot__logo img {
+    width: u.rem(110.05);
+    height: u.rem(40);
+    margin: u.rem(48) auto 0 u.rem(32);
+  }
+
+  & .foot__txt p {
+    color: var(--White, #fff);
+    font-family: Outfit;
+    font-size: u.rem(16);
+    font-style: normal;
+    font-weight: 300;
+    line-height: u.rem(26);
+    padding: u.rem(38) u.rem(32);
+  }
+}

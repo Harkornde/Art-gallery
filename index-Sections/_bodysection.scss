@@ -4,8 +4,7 @@
   margin-top: u.rem(120);
 
   & .img {
-    background: url(../assets/mobile/image-grid-1.jpg),
-      lightgray 50% / cover no-repeat;
+    background: url(../assets/mobile/image-grid-1.jpg), lightgray 50%;
     background-repeat: no-repeat;
     background-size: cover;
     margin: auto;
@@ -15,20 +14,23 @@
 
     //Tablet
     @include u.breakpoint(tablet) {
-      background: url(../assets/tablet/image-grid-1.jpg),
-        lightgray 50% / cover no-repeat;
-      background-repeat: no-repeat;
+      background: url(../assets/tablet/image-grid-1.jpg), lightgray 50%;
+      background-repeat: round;
+      background-size: cover;
+      flex: 1;
       width: u.rem(398);
       height: u.rem(400);
+      margin: 0;
     }
 
     //Desktop
     @include u.breakpoint(desktop) {
-      background: url(../assets/desktop/image-grid-1.jpg),
-        lightgray 50% / cover no-repeat;
-      background-repeat: no-repeat;
-      width: u.rem(635);
+      background: url(../assets/desktop/image-grid-1.jpg), lightgray 50%;
+      background-repeat: round;
+      background-size: cover;
+      width: min(u.rem(635), 100%);
       height: u.rem(400);
+      flex: 1;
     }
   }
 
@@ -76,16 +78,16 @@
     }
   }
 
-  // Day_at it both on mobile and desktop
+  // Day_at it both on tablet and desktop
   @include u.breakpoint(tablet) {
     display: flex;
-    flex: 1;
     flex-direction: row-reverse;
     column-gap: u.rem(68);
     width: calc(100% - u.rem(80));
     margin: auto;
     margin-top: u.rem(120);
     margin-bottom: u.rem(11);
+    justify-content: space-between;
 
     .img_txt {
       width: u.rem(248);
@@ -109,18 +111,25 @@
 .img_grd {
   margin-bottom: u.rem(120);
   & .bench_img {
-    background: url(../assets/mobile/image-grid-2.jpg),
-      lightgray 50% / cover no-repeat;
+    background: url(../assets/mobile/image-grid-2.jpg), lightgray 50%;
     width: calc(100% - u.rem(32));
     height: u.rem(480);
     margin: u.rem(32) auto u.rem(16);
 
     @include u.breakpoint(tablet) {
       grid-row: 1/3;
-      background: url(../assets/tablet/image-grid-2.jpg),
-        lightgray 50% / cover no-repeat;
-      width: u.rem(398);
+      background: url(../assets/tablet/image-grid-2.jpg), lightgray 50%;
+      background-repeat: round;
+      background-size: cover;
+      width: 100%;
       height: u.rem(720);
+      margin: auto;
+    }
+
+    @include u.breakpoint(desktop) {
+      background: url(../assets/desktop/image-grid-2.jpg), lightgray 50%;
+      background-repeat: round;
+      background-size: cover;
     }
   }
 
@@ -129,6 +138,21 @@
     width: calc(100% - u.rem(32));
     height: u.rem(200);
     margin: u.rem(16) auto;
+
+    @include u.breakpoint(tablet) {
+      background: url(../assets/tablet/image-grid-3.jpg), lightgray 50%;
+      background-repeat: round;
+      background-size: cover;
+      width: 100%;
+      height: u.rem(313);
+      margin: auto;
+    }
+
+    @include u.breakpoint(desktop) {
+      background: url(../assets/desktop/image-grid-3.jpg), lightgray 50%;
+      background-repeat: round;
+      background-size: cover;
+    }
   }
 
   & .inspired {
@@ -137,6 +161,19 @@
     margin: auto;
     background: var(--Almost-black);
     color: white;
+
+    @include u.breakpoint(tablet) {
+      width: 100%;
+      height: u.rem(396);
+      margin: auto;
+      background: var(--Almost-black);
+      color: white;
+    }
+
+    @include u.breakpoint(desktop) {
+      height: u.rem(377);
+    }
+
     & h1 {
       padding: u.rem(48) u.rem(24) u.rem(24);
       font-family: Big Shoulders Display;
@@ -144,6 +181,16 @@
       font-style: normal;
       font-weight: 900;
       line-height: u.rem(45);
+
+      @include u.breakpoint(tablet) {
+        padding: u.rem(85) u.rem(29) u.rem(24);
+      }
+
+      @include u.breakpoint(desktop) {
+        padding: u.rem(65) u.rem(48) u.rem(32);
+        font-size: u.rem(60);
+        line-height: u.rem(60);
+      }
     }
 
     & p {
@@ -153,6 +200,16 @@
       font-style: normal;
       font-weight: 300;
       line-height: u.rem(28);
+
+      @include u.breakpoint(tablet) {
+        padding: 0 u.rem(29);
+      }
+
+      @include u.breakpoint(desktop) {
+        padding: 0 u.rem(48);
+        font-size: u.rem(22);
+        line-height: u.rem(32);
+      }
     }
   }
 
@@ -160,9 +217,21 @@
     width: calc(100% - u.rem(80));
     margin: auto;
     display: grid;
-    grid-template-columns: u.rem(400) u.rem(280);
+    // grid-template-columns: u.rem(400) u.rem(280);
+    grid-template-columns: minmax(u.rem(400), 3fr) minmax(u.rem(280), 2fr);
     grid-template-rows: u.rem(313) u.rem(396);
-    // grid: u.rem(400) u.rem(280) / u.rem(313) u.rem(396);
     grid-gap: u.rem(11);
+    justify-content: space-evenly;
+  }
+
+  @include u.breakpoint(desktop) {
+    width: calc(100% - u.rem(330));
+    margin: auto;
+    margin-top: u.rem(30);
+    display: grid;
+    grid-template-columns: minmax(38.625rem, 3fr) minmax(27.8125rem, 2fr);
+    grid-template-rows: u.rem(313) u.rem(377);
+    grid-gap: u.rem(30);
+    justify-content: stretch;
   }
 }

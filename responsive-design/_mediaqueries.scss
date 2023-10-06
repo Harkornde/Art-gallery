@@ -1,8 +1,8 @@
 @use "sass:math";
 
 $breakpoints: (
-  "tablet": 768px,
-  "desktop": 1440px,
+  "tablet": 48em,
+  "desktop": 90em,
 );
 
 @mixin breakpoint($size) {
@@ -12,5 +12,5 @@ $breakpoints: (
 }
 
 @function rem($pixel) {
-  @return math.div($pixel, 16) + rem; 
+  @return math.div($pixel, 16) + rem;
 }
