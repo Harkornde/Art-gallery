@@ -29,6 +29,7 @@ body {
 
 // Mobile version
 
+// ../assets/mobile/image-hero.jpg
 #gallery__homepage {
   background: url(../assets/mobile/image-hero.jpg),
     lightgray 50% / cover no-repeat;
@@ -120,6 +121,17 @@ body {
 
 .locate a {
   text-decoration: none;
+
+  @include res.breakpoint(desktop) {
+    &:hover {
+      background: var(--brown);
+      transition: all 0.2s ease-in;
+
+      & rect {
+        fill: var(--Almost-black);
+      }
+    }
+  }
 }
 
 .locate a {
@@ -155,9 +167,6 @@ body {
   left: res.rem(32);
 
   @include res.breakpoint(tablet) {
-    // position: absolute;
-    // top: res.rem(483);
-    // left: res.rem(593);
     position: absolute;
     margin-top: res.rem(-28);
     margin-left: res.rem(170);
