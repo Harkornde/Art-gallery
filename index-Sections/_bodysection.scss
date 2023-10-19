@@ -78,7 +78,7 @@
     }
   }
 
-  // Day_at it both on tablet and desktop
+  // Day_at both on tablet and desktop
   @include u.breakpoint(tablet) {
     display: flex;
     flex-direction: row-reverse;
@@ -103,9 +103,6 @@
     }
   }
 }
-
-// @include u.breakpoint(tablet) {
-// }
 
 //GRid section
 .img_grd {

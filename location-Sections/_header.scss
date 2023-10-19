@@ -11,7 +11,6 @@ html {
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
 }
 
 :root {
@@ -27,6 +26,12 @@ body {
   background: #fcfaf9;
 }
 
+main {
+  max-width: v.rem(1920);
+  position: relative;
+  margin: auto;
+}
+
 #home__map {
   width: 100%;
   height: v.rem(574);
@@ -34,11 +39,57 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 
+  @include v.breakpoint(tablet) {
+    background: url(../assets/tablet/image-map.png);
+  }
+
+  @include v.breakpoint(desktop) {
+    background: url(../assets/desktop/image-map.png);
+  }
+
   & a {
     text-decoration: none;
-    color: var(--White);
+    color: var(--white);
+    background: var(--Almost-black);
+    padding: v.rem(24) v.rem(32);
+    font-family: Big Shoulders Display;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: v.rem(3.636);
+    position: relative;
+    bottom: 28px;
+    right: 5px;
+
+    &:hover {
+      background: var(--brown);
+      transition: all 0.2s ease-in;
+
+      & rect {
+        fill: var(--Almost-black);
+      }
+    }
+
+    @include v.breakpoint(tablet) {
+      right: 0;
+      left: v.rem(39);
+    }
+
+    @include v.breakpoint(tablet) {
+      left: v.rem(156);
+    }
+
+    & svg {
+      position: relative;
+      right: v.rem(28);
+      top: v.rem(28);
+
+      @include v.breakpoint(tablet) {
+        right: v.rem(32);
+      }
+    }
   }
 }
 
-// color: var(--White);
-// background: var(--Almost-black);
+// @include v.breakpoint(tablet) {}

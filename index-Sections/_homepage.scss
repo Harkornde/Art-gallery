@@ -20,6 +20,12 @@ body {
   background: #fcfaf9;
 }
 
+main {
+  max-width: res.rem(1920);
+  position: relative;
+  margin: auto;
+}
+
 :root {
   --brown: #d5966c;
   --Almost-black: #151515;
@@ -120,7 +126,6 @@ body {
 
 .locate a {
   text-decoration: none;
-  color: var(--white);
   margin: res.rem(32) 0 res.rem(32) res.rem(16);
   padding: res.rem(24) res.rem(32);
   font-family: "Big Shoulders Display", cursive;

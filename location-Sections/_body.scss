@@ -1,0 +1,88 @@
+@use "../responsive-design" as b;
+
+#address {
+  width: 100%;
+  height: auto;
+  padding-bottom: b.rem(56);
+  background: var(--Almost-black);
+
+  @include b.breakpoint(tablet) {
+    display: flex;
+    padding-bottom: b.rem(80);
+    gap: b.rem(68);
+  }
+
+  @include b.breakpoint(desktop) {
+    padding-bottom: b.rem(128);
+    gap: b.rem(220);
+  }
+
+  & .locate h1 {
+    color: var(--White, #fff);
+    font-family: Big Shoulders Display;
+    font-size: b.rem(50);
+    font-style: normal;
+    font-weight: 900;
+    line-height: b.rem(45);
+    padding: b.rem(48) b.rem(16);
+
+    @include b.breakpoint(tablet) {
+      font-size: b.rem(55);
+      line-height: b.rem(50);
+      margin-left: b.rem(39);
+      padding-top: 0;
+      margin-top: b.rem(88);
+    }
+
+    @include b.breakpoint(desktop) {
+      width: b.rem(350);
+      font-size: b.rem(70);
+      line-height: b.rem(70);
+      margin-left: b.rem(165);
+      margin-top: b.rem(104);
+      font-feature-settings: "clig" off, "liga" off;
+    }
+  }
+
+  & .street h1 {
+    color: #d5966c;
+    font-family: Big Shoulders Display;
+    font-size: b.rem(32);
+    font-style: normal;
+    font-weight: 900;
+    line-height: b.rem(32);
+    margin-left: b.rem(16);
+
+    @include b.breakpoint(tablet) {
+      margin-top: b.rem(88);
+    }
+
+    @include b.breakpoint(desktop) {
+      margin-top: b.rem(104);
+      font-feature-settings: "clig" off, "liga" off;
+    }
+  }
+
+  & .street p {
+    color: var(--white);
+    font-family: Outfit;
+    font-size: b.rem(18);
+    font-style: normal;
+    font-weight: 300;
+    line-height: b.rem(28);
+    margin: b.rem(20) b.rem(16) auto;
+
+    @include b.breakpoint(tablet) {
+      margin-right: b.rem(40);
+    }
+
+    @include b.breakpoint(desktop) {
+      width: 540px;
+      font-size: b.rem(22);
+      margin-right: b.rem(165);
+      line-height: b.rem(32);
+    }
+  }
+}
+
+// @include b.breakpoint(tablet) {}
